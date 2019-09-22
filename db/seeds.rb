@@ -9,10 +9,10 @@
 Movie.create!([
   {
     title: 'Iron Man',
-    description: 
+    description:
     %{
-      When wealthy industrialist Tony Stark is forced to build an 
-      armored suit after a life-threatening incident, he ultimately 
+      When wealthy industrialist Tony Stark is forced to build an
+      armored suit after a life-threatening incident, he ultimately
       decides to use its technology to fight against evil.
     }.squish,
     image_file_name: 'ironman.jpg',
@@ -25,10 +25,10 @@ Movie.create!([
   },
   {
     title: 'Superman',
-    description: 
+    description:
     %{
-      An alien orphan is sent from his dying planet to Earth, where 
-      he grows up to become his adoptive home's first and greatest 
+      An alien orphan is sent from his dying planet to Earth, where
+      he grows up to become his adoptive home's first and greatest
       super-hero.
     }.squish,
     image_file_name: 'superman.jpg',
@@ -41,11 +41,11 @@ Movie.create!([
   },
   {
     title: 'Spider-Man',
-    description: 
+    description:
     %{
-      When bitten by a genetically modified spider, a nerdy, shy, and 
-      awkward high school student gains spider-like abilities that he 
-      eventually must use to fight evil as a superhero after tragedy 
+      When bitten by a genetically modified spider, a nerdy, shy, and
+      awkward high school student gains spider-like abilities that he
+      eventually must use to fight evil as a superhero after tragedy
       befalls his family.
     }.squish,
     image_file_name: 'spiderman.jpg',
@@ -58,9 +58,9 @@ Movie.create!([
   },
   {
     title: 'Batman',
-    description: 
+    description:
     %{
-      The Dark Knight of Gotham City begins his war on crime with his 
+      The Dark Knight of Gotham City begins his war on crime with his
       first major enemy being the clownishly homicidal Joker.
     }.squish,
     image_file_name: 'batman.jpg',
@@ -72,24 +72,21 @@ Movie.create!([
     total_gross: 251_188_924
   },
   {
-    title: "Catwoman",
-    description: 
+    title: "Iron Man 2",
+    description:
     %{
-      Patience Philips seems destined to spend her life apologizing for taking up space. 
-      Despite her artistic ability&mdash;she has a more than respectable career as a graphic 
-      designer.
-    }.squish,
+      With the world now aware of his identity as Iron Man, Tony Stark must contend with both his declining health and a vengeful mad man with ties to his father's legacy. Robert Downey Jr., Mickey Rourke, Gwyneth Paltrow,
     image_file_name: "catwoman.jpg",
-    cast: "Halle Berry, Sharon Stone and Benjamin Bratt",
-    released_on: "2004-07-23",
-    duration: "101 min",
-    director: "Jean-Christophe 'Pitof' Comar",
+    cast: "Jon FavreauRobert Downey Jr., Mickey Rourke, Gwyneth Paltrow",
+    released_on: "2010-05-07",
+    duration: "124 min",
+    director: "Jon Favreau",
     rating: "PG-13",
-    total_gross: 40200000.00
+    total_gross: 312433441.00
   },
   {
     title: 'Batman vs. Godzilla',
-    description: 
+    description:
     %{
       An epic battle between The Caped Crusader and the fire-breathing dinosaur Gojira.
       Hang on to your popcorn, kids!

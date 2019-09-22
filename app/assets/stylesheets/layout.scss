@@ -3,18 +3,24 @@
 body {
   color: $primary-text-color;
   background-image: image-url("background.jpg");
-  font-family: 'Slabo 27px', serif;
+  font-family: 'Shadows Into Light', cursive;
 }
 
 header#page-header {
-  background-color: $secondary-background-color;
-  padding: 0px 25px;
+    background-image: url(marvel.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $fieldset-color;
+    color: #FFFF00;
+    text-transform: uppercase;
+    padding: 20px 25px;
+    font-family: 'Marvel', sans-serif;
 
   h1 a {
     height: 0px;
     padding-top: 60px;
     display: block;
-    font-family: 'Vollkorn SC', serif;
+    font-family: 'Shadows Into Light', cursive;
     color: #fff;
     text-decoration: none;
     overflow: hidden;
@@ -32,8 +38,8 @@ header#page-header {
     }
   }
 
+  margin: 0 auto;
   div#masthead {
-    margin: 0 auto;
     width: 960px;
     position: relative;
     text-shadow: #000 0 0 2px;
@@ -74,10 +80,10 @@ footer#page-footer {
 
   a {
     color: $primary-link-color;
+    text-decoration: underline;
     text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
     }
   }
 }

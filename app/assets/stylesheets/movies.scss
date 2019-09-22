@@ -37,9 +37,9 @@ article#movie {
   }
 
   img {
-    float: right;
-    margin: 0 0 20px 20px;
-    border: 3px solid $subdued-color;
+    float: left;
+    margin: 20px 20px 0px 0px;
+    border: 3px solid $secondary-text-color;
   }
 
   ul.review-stats {
@@ -63,7 +63,7 @@ ul#movies {
   article.movie {
     margin-bottom: 1.5em;
     padding-bottom: 1.5em;
-    border-bottom: 1px dotted $subdued-color;
+    border-bottom: 1px dotted $secondary-text-color;
 
     &:last-child {
       border-bottom: none;
@@ -87,9 +87,9 @@ ul#movies {
     }
 
     img {
-      float: right;
-      margin: 0 0 0 20px;
-      border: 3px solid $subdued-color;
+      float: left;
+      margin: 20px 20px 0px 0px;
+      border: 3px solid $secondary-text-color;
     }
 
     table {
