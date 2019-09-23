@@ -3,7 +3,7 @@
 body {
   color: $primary-text-color;
   background-image: image-url("background.jpg");
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Acme', sans-serif;
 }
 
 header#page-header {
@@ -13,14 +13,14 @@ header#page-header {
     background-color: $fieldset-color;
     color: #FFFF00;
     text-transform: uppercase;
-    padding: 20px 25px;
+    padding: 15px 15px;
     font-family: 'Marvel', sans-serif;
 
   h1 a {
     height: 0px;
     padding-top: 60px;
     display: block;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Acme', sans-serif;
     color: #fff;
     text-decoration: none;
     overflow: hidden;
