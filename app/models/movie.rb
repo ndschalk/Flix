@@ -5,16 +5,17 @@ class Movie < ApplicationRecord
 
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
 
-  validates :image_file_name, allow_blank: true, format: {
-    with:    /\w+\.(gif|jpg|png)\z/i,
-    message: "must reference a GIF, JPG, or PNG image"
-  }
+  validates_attachment :image,
+  :content_type => { :content_type => ['image/jpeg', 'image/png'] },
+  :size => { :less_than => 1.megabyte }
 
   RATINGS = %w(G PG PG-13 R NC-17)
 
   validates :rating, inclusion: { in: RATINGS }
 
   has_many :reviews, dependent: :destroy
+
+  has_attached_file :image
 
   def self.released
     where("released_on <= ?", Time.now).order("released_on desc")
