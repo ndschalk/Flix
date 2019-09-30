@@ -7,9 +7,9 @@ class Movie < ApplicationRecord
 
   has_attached_file :image
 
-  validates :attachment :image
-  :content_type => { :content_type => ['image/jpeg', 'image/png'] },
-  :size => { :less_than => 1.megabyte }
+  validates_attachment :image,
+    :content_type => { :content_type => ['image/jpeg', 'image/png'] },
+    :size => { :less_than => 1.megabyte }
 
   RATINGS = %w(G PG PG-13 R NC-17)
 
