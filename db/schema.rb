@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20190930012708) do
     t.string "director"
     t.string "duration"
     t.string "image_file_name", default: ""
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "reviews", force: :cascade do |t|
