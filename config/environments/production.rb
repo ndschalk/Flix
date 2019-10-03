@@ -87,10 +87,9 @@ end
 
 config.paperclip_defaults = {
   :storage => :s3,
-  :preserve_files => true,
 #  :s3_host_name => 'REMOVE_THIS_LINE_IF_UNNECESSARY',
   :s3_credentials => {
-    :access_key_id => AKIAJYG27JR4M4FS3BXA ,
+    :access_key_id => AKIAJYG27JR4M4FS3BXA,
     :secret_access_key => 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,
     :s3_region => "US East (Ohio)"
   },
