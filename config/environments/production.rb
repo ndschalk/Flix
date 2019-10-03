@@ -87,11 +87,12 @@ end
 
 config.paperclip_defaults = {
   :storage => :s3,
-  :url => ':s3_domain_url',
-  :path => '/:class/:attachment/:id_partition/:style/:filename',
+  :preserve_files => true,
+#  :s3_host_name => 'REMOVE_THIS_LINE_IF_UNNECESSARY',
   :s3_credentials => {
-    :bucket => ENV['AWS_BUCKET'],
-    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-  }
+    :access_key_id => AKIAJYG27JR4M4FS3BXA ,
+    :secret_access_key => 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,
+    :s3_region => "US East (Ohio)"
+  },
+  :bucket => 'immense-gorge-24489'
 }
