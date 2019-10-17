@@ -3,29 +3,28 @@
 body {
   color: $primary-text-color;
   background-image: image-url("background.jpg");
-  font-family: 'Acme', sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial;
 }
 
-
 header#page-header {
-    background-image: url(marvel.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: $fieldset-color;
-    color: #FFFF00;
-    text-transform: uppercase;
-    padding: 15px 15px;
-    font-family: 'Marvel', sans-serif;
+  background-color: $secondary-background-color;
+  padding: 40px 35px;
 
+
+  }
   h1 a {
-    height: 0px;
-    padding-top: 60px;
+    height: 15px;
+    padding-top: 90px;
     display: block;
-    font-family: 'Acme', sans-serif;
+    font-family: "Esteban", sans-serif;
     color: #fff;
     text-decoration: none;
     overflow: hidden;
-    background: image-url("logo.png") no-repeat 0 0;
+    background: image-url("logo.png") center no-repeat;
+    img.resize {
+  max-width:50%;
+  max-height:50%;
+}
   }
 
   a.button {
@@ -39,8 +38,8 @@ header#page-header {
     }
   }
 
-  margin: 0 auto;
   div#masthead {
+    margin: 0 auto;
     width: 960px;
     position: relative;
     text-shadow: #000 0 0 2px;
@@ -50,28 +49,35 @@ header#page-header {
       color: #fff;
       line-height: 60px;
     }
-
-    nav {
-      margin: 0;
+div {}
+    #nav {
       position: absolute;
       color: $subdued-color;
-      top: 0;
-      right: 0;
-      height: 60px;
-      a {
+      padding: 45px;
+      left: 50%;
+      margin-left:-375px; /* negative margin equal to half the width */
+      width:750px;
+      list-style: none;
+      }
+    #nav li {
+      float: left;
+      }
+    #nav a {
         color: $secondary-link-color;
+        display: block;
+        text-align: center;
+        width: 150px; /* fixed width */
         text-decoration: none;
-
+      }
         &:hover {
           text-decoration: underline;
         }
       }
-    }
-  }
-}
+
+
 
 footer#page-footer {
-  color: $secondary-text-color;
+  color: $primary-background-color;
   padding: 20px 25px;
 
   p {
@@ -80,17 +86,17 @@ footer#page-footer {
   }
 
   a {
-    color: $fieldset-color;
-    text-decoration: underline;
+    color: $primary-link-color;
     text-decoration: none;
 
     &:hover {
+      text-decoration: underline;
     }
   }
 }
 
 div#wrapper {
-  background: #BEE7F6(25%);
+  background: #34302F;
   padding: 10px;
   min-height: 400px;
   overflow: hidden;
@@ -119,6 +125,11 @@ aside#sidebar {
     text-transform: uppercase;
   }
 
+  h3 {
+    font-size: 110%;
+    border-bottom: 1px solid $subdued-color;
+  }
+
   a,
   a:link,
   a:visited {
@@ -135,7 +146,7 @@ aside#sidebar {
         padding: 4px 0;
         padding-left: 25px;
 
-        &.all-movies a {
+        &.movies a {
           display: block;
           background: image-url("arrow.png") no-repeat 10px 8px;
           padding-left: 35px;
@@ -148,10 +159,14 @@ aside#sidebar {
         }
 
         a:hover {
-          background-color: $primary-text-color;
+          background-color: $accent-color;
           color: #000;
         }
 
+        a.active {
+          background-color: $subdued-color;
+          color: #000;
+        }
       }
     }
   }

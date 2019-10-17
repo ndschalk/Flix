@@ -11,7 +11,13 @@
 @import "colors";
 
 /* MOVIES */
-article#movie {
+
+article.movie {
+  border: 5px solid #99585C;
+  padding: 10px;
+  background-color: #1A0B06;
+  margin: 15px;
+
   p {
     padding: .5em 0;
     font-size: 1.15em;
@@ -36,10 +42,10 @@ article#movie {
   }
 
   img {
-    float: left;
-    margin: 5px 40px 0px 10px;
-    border: 3px solid $fieldset-color;
-  }
+    float: right;
+    margin: 0 20px 20px 20px;
+    border: 3px solid $subdued-color;
+    }
 
   ul.review-stats {
     font-size: 1.15em;
@@ -62,11 +68,10 @@ ul#movies {
   article.movie {
     margin-bottom: 1.5em;
     padding-bottom: 1.5em;
-    border-bottom: 1px dotted $secondary-text-color;
+
 
     &:last-child {
-      border-bottom: none;
-      margin-bottom: 0px;
+    margin-bottom: 0px;
     }
 
     p {
@@ -86,10 +91,10 @@ ul#movies {
     }
 
     img {
-      float: left;
-      margin: 5px 49px 0px 10px;
-      border: 3px solid $secondary-text-color;
-    }
+      float: right;
+      margin: 0 0 0 20px;
+      border: 3px solid $subdued-color;
+        }
 
     table {
       margin: 1em 0 0 1em;
@@ -164,10 +169,12 @@ ol#reviews {
         font-weight: bold;
       }
       &.user {
+        font-size: .9em;
         font-weight: normal;
+        color: $secondary-text-color;
       }
       &.date {
-        font-size: .9em;
+        font-size: .8em;
         font-weight: bold;
         color: $secondary-text-color;
       }
@@ -176,6 +183,34 @@ ol#reviews {
     p {
       font-size: .95em;
     }
+  }
+}
+
+/* FAVORITES */
+
+ol#favorites {
+  font-size: 1.15em;
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin: 1em 0;
+
+    span {
+      &.date {
+        font-size: .75em;
+        color: $secondary-text-color;
+      }
+    }
+
+    a {
+      font-weight: normal;
+    }
+
+    img {
+      margin-right: 5px;
+      vertical-align: middle;
+      }
   }
 }
 

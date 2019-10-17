@@ -5,17 +5,22 @@ class Movie < ApplicationRecord
 
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
 
-  has_attached_file :image
+  validates :image_file_name, allow_blank: true, format: {
+    with:    /\w+\.(gif|jpg|png)\z/i,
+    message: "must reference a GIF, JPG, or PNG image"
+  }
 
-  validates :attachment :image
-  :content_type => { :content_type => ['image/jpeg', 'image/png'] },
-  :size => { :less_than => 1.megabyte }
-
-  RATINGS = %w(G PG PG-13 R NC-17)
+  RATINGS = %w(G PG PG-13 R NC-17 Not-Rated)
 
   validates :rating, inclusion: { in: RATINGS }
 
   has_many :reviews, dependent: :destroy
+
+  has_many :favorites, dependent: :destroy
+  has_many :fans, through: :favorites, source: :user
+
+  has_many :characterizations, dependent: :destroy
+  has_many :genres, through: :characterizations
 
   def self.released
     where("released_on <= ?", Time.now).order("released_on desc")
@@ -33,8 +38,16 @@ class Movie < ApplicationRecord
     order('created_at desc').limit(3)
   end
 
+  def classic
+    if('released_on >= 20.years.ago')
+      total_gross
+    else
+      total_gross
+  end
+end
+
   def flop?
-    total_gross.blank? || total_gross < 50000000
+      total_gross.blank? || total_gross < 50000000
   end
 
   def average_stars

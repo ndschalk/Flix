@@ -1,4 +1,5 @@
 <article id="movie" class="movie">
+<% content_for(:title, @movie.title) %>
   <header>
     <%= image_for(@movie) %>
     <h1><%= @movie.title %></h1>
@@ -25,44 +26,74 @@
 
   <h3>Total Gross</h3>
   <p>
+
     <%= format_total_gross(@movie) %>
+
+
   </p>
+
+  <h3>Genres</h3>
+  <ul>
+    <% @genres.each do |genre| %>
+      <li><%= genre.name %></li>
+    <% end %>
+  </ul>
 
   <h3>Average Review</h3>
   <p>
     <%= format_average_stars(@movie) %>
   </p>
 
-  <% if @movie.reviews.any? %>
-    <h3>Reviews</h3>
-    <ol id="reviews">
-      <% @movie.recent_reviews.each do |review| %>
-        <li>
-          <span class="review"><%= pluralize(review.stars, 'star') %></span>
-          <span class="user">by <%= review.name %></span>
-          <span class="date">
-            <%= time_ago_in_words(review.created_at) %> ago
-          </span>
-          <p>
-            &quot;<%= review.comment %>&quot;
-          </p>
-        </li>
-      <% end %>
-    </ol>
-    <p>
-      Read all <%= link_to pluralize(@movie.reviews.size, "review"),
-                  movie_reviews_path(@movie) %>
-    </p>
-  <% end %>
+  <h3>Reviews</h3>
+  <p>
+    <%= link_to pluralize(@movie.reviews.size, "review"),
+                movie_reviews_path(@movie) %>
+  </p>
 
   <footer>
     <%= link_to "Write Review", new_movie_review_path(@movie),
                 class: 'button ok review' %>
     <nav>
-      <%= link_to 'Edit', edit_movie_path(@movie), class: 'button' %>
-      <%= link_to 'Delete', @movie,
-                  class: 'button',
-                  method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if current_user_admin? %>
+            <%= link_to 'Edit', edit_movie_path(@movie), class: 'button' %>
+        <%= link_to 'Delete', @movie,
+                    class: 'button',
+                    method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </nav>
-  </footer>
+    <nav>
+      <% if current_user %>
+        <% if @current_favorite %>
+        <%= button_to "Unfav", movie_favorite_path(@movie, @current_favorite), method: :delete %>
+        <% else %>
+        <%= button_to "Fav", movie_favorites_path(@movie) %>
+        <% end %>
+        <% end %>
+          </nav>
+
+      <p>
+          <%= pluralize(@fans.size, 'fan') %>
+      </p>
+
+<% content_for :side do %>
+  <h3>Genres</h3>
+  <ul>
+    <% @genres.each do |genre| %>
+      <li><%= genre.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+<% content_for :side do %>
+  <% if @fans.any? %>
+   <h3>Fans</h3>
+      <ul>
+      <% @fans.each do |user| %>
+      <li>
+      <%= link_to user.name, user %>
+      </li>
+      <% end %>
+      <% end %>
+      </ul>
+      <% end %>
+    </footer>
 </article>
